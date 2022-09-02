@@ -4,7 +4,21 @@ import java.util.Scanner;
 public class Main {
     private static Scanner in=new Scanner(System.in);
     public static void main(String[] args) {
-        fibonacciTesting();
+        squaresTesting();
+    }
+
+    public static void squaresTesting(){
+        int n=3;
+        System.out.println("square: integer?"); n=in.nextInt();
+        if(n<0) n=-n;
+        int square=0;
+        int next=1;
+        for(int i=1; i<=n; i++){
+            // square(n)
+            square+=next;
+            next+=2;
+        }
+        System.out.printf("square(%d): %d",n,square);
     }
 
     public static void fibonacciTesting(){
