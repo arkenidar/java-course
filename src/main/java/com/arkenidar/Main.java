@@ -1,8 +1,28 @@
 package com.arkenidar;
 
+import java.util.Scanner;
 public class Main {
+    private static Scanner in=new Scanner(System.in);
     public static void main(String[] args) {
-        minAndMaxTesting();
+        fibonacciTesting();
+    }
+
+    public static void fibonacciTesting(){
+        int n=45;
+        System.out.println("fibonacci: integer?"); n=in.nextInt();
+        if(n<0) return;
+        int fib=-1;
+        Integer prev1=0,prev2=1;
+        for(int i=0; i<=n; i++){
+            // fib(n)
+            if(i<=1) fib=i;
+            else{
+                fib=prev1+prev2;
+                prev1=prev2;
+                prev2=fib;
+            }
+        }
+        System.out.printf("fibonacci(%d): %d",n,fib);
     }
 
     public static void minAndMaxTesting(){
